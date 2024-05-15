@@ -1,0 +1,1898 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+            <meta content="width=device-width, initial-scale=1" name="viewport">
+                <title>
+                    www.FakeBook.com
+                </title>
+                <style>
+                    *{
+			margin: 0;
+			padding: 0;
+			font-family: 'poppins', sans-serif;
+			box-sizing: border-box;
+
+		}
+		body{
+			background: var(--body-color);
+			transition: background 0.5s;
+		}
+
+		:root{
+			--body-color: #efefef;
+			--nav-color: #1876f2;
+			--bg-color: #fff;
+		}
+		.dark-theme{
+			--body-color: #0a0a0a;
+			--nav-color: #000;
+			--bg-color: #000;
+		}
+
+
+		nav{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			background:var(--nav-color);
+			padding: 5px 5%;
+			position: sticky;
+			top: 0;
+			z-index: 100;
+		}
+		.logo{
+			width: 40px;
+			margin-right: 45px;
+			border:none;
+			box-shadow: 0 0 10px black;
+			border-radius:45% ;
+			padding: 3px;
+			cursor: pointer;
+		}
+		.nav-left, .nav-right{
+			display: flex;
+			align-items: center;
+		}
+		.nav-left ul li{
+			cursor: pointer;
+
+			list-style: none;
+			display: inline-block;
+		}
+		.nav-left ul li i{
+			color: white;
+			font-size: 25px;
+			margin: 0 30px;
+		}
+
+/*--------------------media query ------------------------------------------------------*/
+		 @media screen and (max-width: 780px) {
+  		.nav-right{
+  			width: 150px;
+  		}
+  		.nav-left ul li{
+			list-style: none;
+			display: inline;
+		}
+		.nav-left ul li i{
+
+			font-size: 20px;
+			margin: 0 2px;
+		}
+		.left-sidebar{
+			max-width: 50px;
+			align-items: center;
+			align-content: center;
+			font-size: 7px;
+			padding: 0;
+			margin-right: 30px;
+		}
+		.story-gallery .story1 img{
+			max-width: 30px;
+
+			margin-bottom: -15px;
+				
+		}
+		.story a img{
+			width: 30px;
+			border: 4px solid lightgreen;
+
+		}
+		 .story-gallery .story p{
+					
+				    font-size: 7px;
+		}
+		.left-sidebar img{
+			border-radius: 10px;
+			margin-left:-20px;
+			padding: 3px;
+
+			width: 50px;
+		}
+		.right-sidebar{
+			margin-right: 0;
+			max-width: 180px;
+			align-items: center;
+			align-content: center;
+			font-size: 7px;
+			text-align: center;
+			
+		}
+		.imp-links a,i{
+			padding: 0;
+			margin: 0;
+		}
+		.main-content{
+			max-width: 500px;
+			/*overflow: auto;*/
+
+		}
+
+		.main-content .add-post-links a,i{
+			
+			margin: 0;
+			padding: 2px;
+			display: inline;
+			font-size: 10px;
+
+			
+		}
+		.inbox {
+		margin-left: -70px;			
+			max-width: 300px;
+
+		}
+		nav{
+			width: 148%;
+			
+		}
+
+  }
+}
+/*-0---------------------@media query -------------------------------------------------------*/
+		.nav-user-icon,.search-box i{
+			font-size: 25px;	
+			cursor: pointer;
+
+		}
+		.search-box{
+			background: #efefef;
+			width: 350px;
+			border-radius: 20px;
+			display: flex;
+			align-items: center;
+			padding: 0 15px;
+
+		}
+
+		.search-box input{
+			width: 100%;
+			background: transparent;
+			padding: 10px;
+			outline: none;
+			border: 0;
+
+		}
+		.nav-user-icon a{
+			margin-left: 8px;
+			font-size: x-large;
+			color: whitesmoke;
+
+		}
+		.container{
+			display: flex;
+			justify-content: space-between;
+			padding: 12px 4%;
+		}
+
+		.left-sidebar{
+			/*background: #cbdffa;*/
+			flex-basis: 25%;
+			position: sticky;
+			top: 60px;
+			align-self: flex-start;
+			
+			
+		}
+		.right-sidebar{
+			/*background: #cbdffa;*/
+			flex-basis: 25%;
+			position: sticky;
+			top: 60px;
+			align-self: flex-start;
+			background: var(--bg-color);
+			padding: 20px;
+			border-radius: 20px;
+			color: #626262;
+			/*scroll-behavior:inherit ;*/
+
+			
+		}
+
+		.main-content{
+			flex-basis: 47%;
+		}
+		.imp-links a{
+			text-decoration: none;
+			display: flex;
+		align-items: center;
+		margin-bottom: 30px;
+		color: #626262;
+		width: fit-content;
+		padding-left: 5px;
+		}
+		.shortcut-links a,img{
+			text-decoration: none;
+			display: flex;
+		align-items: center;
+		margin-bottom: 10px;
+		color: #626262;
+		padding: 5px;
+		width: 60px;
+		}
+		
+		.imp-links a i{
+			width: 20px;
+			margin-right: 12px;
+			color: blue;
+		}
+		.imp-links a:last-child{
+			color: blue;
+		}
+		.imp-links {
+			box-shadow: 0 .5px 0 black;
+		}
+		.shortcut-links p{
+			margin: 10px 0;
+			color: #626262;
+			font-weight: 900;
+		}
+		.sidebar-title{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: 15px;
+
+		}
+		.sidebar-title h4{
+			font-weight: 700;
+			font-size: 13px;
+
+		}
+		.sidebar-title a{
+			text-decoration: none;
+			color: #1876f2;
+			font-size: 12px;
+		}
+		.event{
+			display: flex;
+			font-size: 12px;
+			margin-bottom: 15px;
+
+		}
+		.left-event{
+			border-radius: 8px;
+			height: 60px;
+			width: 60px;
+			margin-right: 12px;
+			padding-top: 8px;
+			text-align: center;
+			position: relative;
+			overflow: hidden;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		.event p{
+			font-size: 10px;
+
+		}
+		.event a{
+			font-size: 12px;
+			text-decoration: none;
+			color: #1876f3;
+		}
+		.left-event span{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			background: #1876f2;
+			color: #fff;
+			font-size: 8px;
+			padding: 3px;
+		}
+		.sidebar-ads{
+			width: 100%;
+			
+			box-shadow: 0 0 20px ;
+			border-top-right-radius: 30px;
+			border-bottom-left-radius: 30px;
+			margin-bottom: 17px;
+			/*border-radius: 10px;*/
+
+		}
+
+		.online img{
+			/*float:left;*/
+			display: flex;
+			align-items: center;
+			margin-bottom: 5px;
+			width: 40px;
+		}
+		.online-list p{
+			float: center;
+			font-size: 15px;
+			display: flex;
+
+			position: relative;
+
+			font-weight: 600;
+		}
+		/*.online-list hr{
+			margin-top: 50px;
+		}*/
+
+		.online-list p::after{
+			content: '';
+			width: 10px;
+			/*color: green;*/
+			background: green;
+			height: 10px;
+			position: absolute;
+			margin-left: 5px;
+			border-radius: 50%;
+			display: flex;
+			float: right;
+			position: relative;
+		}
+		.message-list p::after{
+			content: '';
+			width: 10px;
+			/*color: green;*/
+			background: lightgreen;
+			height: 10px;
+			position: absolute;
+			margin-left: 5px;
+			border-radius: 50%;
+			display: flex;
+			float: right;
+			position: relative;
+		}
+		.sidebar-title h4{
+			background: steelblue;
+			width:fit-content;
+			text-align: center;
+			font-size: 15px;
+			padding: 5px;
+			color: white;
+			border-top-left-radius: 10px;
+			border-bottom-right-radius: 10px;
+		}
+
+		.story-gallery{
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 20px;
+
+		}
+		.story{
+			flex-basis: 18%;
+			padding-top: 35%;
+			position: relative;
+			background-position: center;
+			background-size: cover;
+			border-radius: 10px;
+			box-shadow: 0 0 10px;
+		}
+		.story img{
+			position: absolute;
+			width: 45px;
+			border-radius: 50%;
+			top: 7px;
+			left: 5px;
+			border: 5px solid lightgreen;
+		}
+		.story p{
+			position: absolute;
+			bottom: 10px;
+			width: 100%;
+			text-align: center;
+			color: #fff;
+			font-size: 14px;
+		}
+		.story1{
+			background-image: linear-gradient(transparent, rgba(0,0,0,.8)), url(https://pbs.twimg.com/profile_images/606196213369720832/lSvWN_q-_400x400.jpg);
+			
+		}
+		.story2{
+			background-image: linear-gradient(transparent, rgba(0,0,0,.8)), url(https://static.newsx.com/wp-content/uploads/2017/10/Actor-Siddharth.jpg);
+			
+		}
+		.story3{
+			background-image: linear-gradient(transparent, rgba(0,0,0,.8)), url(https://randomuser.me/api/portraits/women/29.jpg);
+			
+		}
+		.story4{
+			background-image: linear-gradient(transparent, rgba(0,0,0,.8)), url(https://images.indulgexpress.com/uploads/user/imagelibrary/2018/8/17/original/Siddharth.JPG);
+			
+		}
+		.story5{
+			background-image: linear-gradient(transparent, rgba(0,0,0,.8)), url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7PCOGyorhiziOsL6FdBJ_X_ntW01J7vznS4hlfBFjbiylZmOIZBhdlK8uOyXhQUUiJTQ&usqp=CAU);
+			
+		}
+		.story.story1 img{
+			top: unset;
+			left: 50%;
+			bottom: 30px;
+			transform: translateX(-50%);
+			border: 3px solid #1876f2;
+			width: 40px;
+
+		}
+		.write-post-container{
+			width: 100%;
+			background: var(--bg-color);
+			border-radius: 6px;
+			padding: 20px;
+			color: #626262;
+		}
+		.user-profile{
+			display: flex;
+			align-items: center;
+
+		}
+		.user-profile img{
+			width: 45px;
+			border-radius: 50%;
+			margin-right: 10px;
+		}
+		.user-profile p{
+			margin-bottom: 5px;
+			font-weight: 600;
+			color: #626262;
+		}
+		.post-input-container{
+			padding-left: 55px;
+			padding-top: 20px;
+
+		}
+		.post-input-container textarea{
+			width: 100%;
+			border: 0;
+			outline: 0;
+			border-bottom: 1px solid #ccc;
+			background: transparent;
+			resize: none;
+		}
+		
+		.add-post-links{
+			display: flex;
+			margin-top: 10px;
+
+		}
+		.add-post-links a{
+			text-decoration: none;
+			display: flex;
+			align-items: center;
+			color: #626262;
+			margin-left: 10px;
+			margin-right: 20px;
+			font-size: 13px;
+		}
+		.add-post-links a i{
+			width: 30px;
+			font-size: 20px;
+		}
+
+		.live{
+			color: red;
+		}
+		.photo{
+			color: green;
+		}
+		.smile{
+			color: yellow;
+		}
+		.post-container{
+			width: 100%;
+			background: var(--bg-color);
+			border-radius: 6px;
+			padding: 20px;
+			color: #626262;
+			margin: 20px 0;
+		}
+		.user-profile span{
+			font-size: 12px;
+			color: #9a9a9a;
+		}
+		.post-text{
+			color: #9a9a9a;
+			margin: 15px 0;
+			font-size: 15px;
+
+		}
+		.post-text span{
+			color: red;
+			font-weight: 500;
+		}
+		.post-text a{
+			color: #1876f2;
+			text-decoration: none;
+		}
+		.post-img{
+			width: 100%;
+			/*height: auto;*/
+			border-radius: 10px;
+			margin-bottom: 5px;
+		}
+		.post-row{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+		.activity-icons div i{
+			font-size: 20px;
+			margin-right: 10px;
+		}
+		.activity-icons div{
+			display: inline-flex;
+			align-items: center;
+			margin-right: 30px;
+		}
+		.post-profile-icon{
+			display: flex;
+			align-items: center;
+
+		}
+		.post-profile-icon img{
+			width: 30px;
+			border-radius: 50%;
+			margin-right: 5px;
+		}
+		.post-row a{
+			color: #9a9a9a;
+		}
+		#load-more{
+			display: none;
+		}
+		.load-more-btn{
+			display: block;
+			margin: auto;
+			cursor: pointer;
+			padding: 5px 10px;
+			border-radius: 4px;
+			border: 1px solid #9a9a9a;
+			color: #626262;
+			background: transparent;
+
+		}
+		.account{
+			background: yellow;
+			padding: 5px;
+			box-shadow: 0 0 20px black;
+			text-align: center;
+			font-weight: 700;
+			font-family: sans-serif;
+			text-shadow: 2px 2px 5px blue;
+			justify-content: space-between;
+			font-variant-caps: all-petite-caps;
+		}
+		.settings-menu{
+			position: absolute;
+			width: 90%;
+			max-width: 350px;
+			background: var(--bg-color);
+			box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+			border-radius: 10px;
+			overflow: hidden;
+			top: 100%;
+			right: 3%;
+			transition:max-height .3s ease-in-out;
+			max-height: 0;
+
+
+		}
+		.settings-menu-height{
+			max-height: 450px;
+		}
+		.user-profile a{
+			font-size: 12px;
+			color: #1876f3;
+			text-decoration: none;
+
+		}
+		.settings-menu-inner{
+			padding: 20px;
+		}
+		.settings-menu hr{
+			border: 0;
+			height: 0.1px;
+			background: #9a9a9a;
+			margin: 15px 0;
+			box-shadow: 0 0 5px;
+		}
+
+		.settings-links{
+			display: flex;
+			align-items: center;
+			margin: 20px 0;
+
+		}
+		.settings-links .settings-icon{
+			width: 20px;
+			margin-right: 10px;
+			border-radius: 50%;
+			color: gray;
+
+		}
+		.settings-icon:hover{
+			color: blue;
+		}
+		.settings-links a{
+			display: flex;
+			flex: 1;
+			align-items: center;
+			justify-content: space-between;
+			text-decoration: none;
+			color: #626262;
+		}
+		.settings-links a:hover{
+			color: blue;
+		}
+		#dark-btn{
+			position: absolute;
+			top: 60px;
+			right: 20px;
+			background: #ccc;
+			width: 45px;
+			border-radius: 15px;
+			padding: 2px 3px;
+			cursor: pointer;
+			transition: 0.6s;
+
+			
+		}
+		#dark-btn span{
+			width: 18px;
+			height: 18px;
+			background: #fff;
+			border-radius: 50%;
+			display: inline-block;
+
+		}
+		#dark-btn.dark-btn-on{
+			padding-left: 23px;
+			background: var(--bg-color);
+
+		}
+		.inbox{
+
+			position: absolute;
+			width: 90%;
+			max-width: 480px;
+			background: var(--bg-color);
+			box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+			border-radius: 10px;
+			overflow: hidden;
+			top: 100%;
+			left: 28%;
+			transition:max-height .2s ease-in-out;
+			max-height: 0px;
+			
+
+		}
+		.notification{
+
+			position: absolute;
+			width: 90%;
+			max-width: 300px;
+			background: var(--bg-color);
+			box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+			border-radius: 10px;
+			overflow: hidden;
+			top: 100%;
+			left: .5%;
+			transition:max-height .1s ease-in-out;
+			max-height: 0;
+			
+
+		}
+		.notification p{
+			padding: 30px;
+
+			color: #ccc;
+		}
+		.notification-tag{
+			background: blue;
+			padding: 5px;
+			box-shadow: 0 0 20px black;
+			text-align: center;
+			font-weight: 700;
+			font-family: sans-serif;
+			text-shadow: 2px 2px 5px blue;
+			justify-content: space-between;
+			font-variant-caps: all-petite-caps;
+
+		}
+		.notification-height{
+			height: 200px;
+			max-height: 300px;
+		}
+		.inbox-height{
+			height: 400px;
+			max-height: 500px;
+		}
+		.message-list img{
+			display: inline-block;
+			align-items: center;
+			margin-bottom: 0;
+			width: 40px;
+			position: relative;
+			border-radius: 40%;
+
+		}
+		.message-list p{
+			position: relative ;
+			padding:10px;
+			color: #9a9a9a;
+
+		}
+		
+		
+		
+		
+                </style>
+            </meta>
+        </meta>
+    </head>
+    <body>
+        <nav>
+            <div class="nav-left">
+                <a href="">
+                    <img alt="" class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAeFBMVEVBaeH///84Y+D3+P2dse8pW988Z+HE0PWZru87ZeD5+/5CbOLi5/rm6/t6lOl2keiEm+rv8/1KcOORpuzW3vhbfuUcVN7a4flUeORjg+bS2vdtjOhOdOSjtfCLouzAzfWtvPG1w/LN1vdafOW9yPNoh+fs7/yzwvNo44OWAAADmElEQVR4nO3diXLaMBSFYdcmwhuLDWY1m1ny/m/YkjTM0IEIo6uio5z/ASJ/Iwiy5JAgjTs+F6dBNAl9bhIF0Vvgc28UwkchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOJHIX4U4kchfg4I1XXJOSX3418jVCo8K7KyLOt69qd99dX8o6oUG+sFwiTJ6uUwXm13h263aRbnxpemH3WPidRw/1uoknKw6uanIorS9NfdegNQYRjOt3n0jQxcqMrhQo/DFar6YR+ocHmIHgYCClUwmj7uAxSqoFO0AcIJVbZt8QqFFK5aAtGEatTuJQonVP1eWyCWUM02rYFYwmDU9k0IJlT7x1cyoML1E0AoYTn2XKiOzwCRhOHWd2HQ/rMQS5jMnwICCcOR98Ln3oZAwuSJFRuYsPFdqFrtXSAKn/ywABJmJy0myvPPnfzznv7is2Y3FzubsSwstXf3xXY5r6pqP5vN6rouyzL7OIGSuwS7QjXTCaNVnSR/z9XsXMOLhVGntAS7ZFlYaYSnWuw3yr3sCpO5Tih3Enovy3N41Ah78MKlZheKQoFeLMzRhYlOOM2sjf2VZeHAe2H/xwvH1oa+ZFcYDnVC9DnUChfWhr5k+VW61ggba0NfsjyHupO1HyC0fe9kX6h5hq0LL4x/vHBj/QbYtrCjE8LP4UojPMDNYXad0gl3Krud3CWJCpPBOL9Ot5lY5DfrNUs397zDYevHu+7k6q6+nDD3Xjg9unluISccz32fw8Xe9zlsaqlrclW4cfTvnuSEB7nVnKPCXSh1TY4K063vwqjju7AYyd1zuCk8DX2fQ8GFt6PCXG5Z6qhwWvkuHMst2hwVLlx9JkpM2Mj9KnVUePBdKLloc1MYxd4L14IbxU4Ki77vwpPgkkZ4z7vfi64qdF+Bcere6l3wA19WqPbr0VXrje78sLyV6AMasicz6p//LfGmPSGV/Dah2/EM2CwKKZSIQrMopFAiCs2ikEKJKDSLQgolotAsCimUiEKzKKRQIgrNopBCiSg0i0IKJaLQLAoplIhCsyikUCIKzaKQQokoNItCCiWi0CwKKZSIQrMopFAiCs2ikEKJKDSLQgolotAsCimUiEKzKKRQIgrNopBCiSg0K1nnvW97Rxeqff/7jtaGvmRXGKhEk72hv7IsdCAK8aMQPwrxoxA/CvGjED8K8aMQPwrxoxA/CvGjED8K8aMQv7NwEvrcJArSuONzcfobew1qUH7QUKUAAAAASUVORK5CYII="/>
+                </a>
+                <ul>
+                    <li>
+                        <i title="Notification" onclick="notificationToggle()" class="fa-solid fa-bell">
+                        </i>
+                    </li>
+                    <li>
+                       <i title="messanger" onclick="inboxToggle()" class="fa-sharp fa-solid fa-paper-plane"></i>
+                    </li>
+                    <li>
+                        <i title="Videos" class="fa-solid fa-play">
+                        </i>
+                    </li>
+                </ul>
+            </div>
+            <div class="inbox" >
+            	 <div class="message-list">
+            	 	<h3 class="account">Messages</h3>
+                        <div class="message-box">
+                            <img alt="" src="https://pbs.twimg.com/profile_images/1565985672501927936/d-r-h241_400x400.jpg">
+                            </img>
+                        </div>
+                        <p>
+                            Aabas modi
+                        </p>
+                    </div>
+                    <hr>
+                       
+                            
+            		
+            	</div>
+
+            	<div class="notification" >
+            	 <div class="notification-list">
+            	 	<h3 class="notification-tag">Notification</h3>
+                        
+                        <p>
+                            There is no Notification for you !
+                        </p>
+                    </div>
+                    <hr>
+                       
+                            
+            		
+            	</div>
+
+
+
+
+            <div class="nav-right">
+                <div class="search-box">
+                    <i class="fa-solid fa-search">
+                    </i>
+                    <input name="" placeholder="Search" type="text">
+                    </input>
+                </div>
+                <div class="nav-user-icon" onclick="settingsMenuToggle()">
+                    <a href="#">
+                        <i title="Account Details" class="fa fa-user">
+                        </i>
+                    </a>
+                </div>
+            </div>
+
+
+            	<!-- --------------------settings menu---------- -->
+
+            <div class="settings-menu">
+            	<h3 class="account">Account Details</h3>
+            	<div id="dark-btn">
+            		<span></span>
+            	</div>
+            	<div class="settings-menu-inner">
+            		<div class="user-profile">
+                        <img alt="" src="https://pbs.twimg.com/profile_images/606196213369720832/lSvWN_q-_400x400.jpg">
+                            <div>
+                                <p>
+                                    Sachin Sharma
+                                </p>
+                               <a href="">See Your Profile</a>
+                            </div>
+                        </img>
+                    </div>
+                    <hr>
+
+                    <div class="user-profile">
+                        <img alt="" src="https://image.shutterstock.com/image-vector/positive-feedback-icon-260nw-613339496.jpg">
+                            <div>
+                                <p>
+                                    Give Feedback
+                                </p>
+                               <a href="">Help Us to improve the website</a>
+                            </div>
+                        </img>
+                    </div>
+                    <hr>
+
+
+                    <div class="settings-links">
+                    	<i class="fa-sharp fa-solid fa-gear settings-icon"></i>
+                    	<a href="">Settings & Privacy <i class="fa-solid fa-chevron-right"></i> </a>
+                    </div>
+                    <div class="settings-links">
+                    	<i class="fa-sharp fa-solid fa-circle-info  settings-icon"></i>
+                    	<a href="">Help & Support <i class="fa-solid fa-chevron-right"></i> </a>
+                    </div>
+                    <div class="settings-links">
+                    	<i class="fa-solid fa-screwdriver-wrench  settings-icon"></i>
+                    	<a href="">Manage Your Account <i class="fa-solid fa-chevron-right"></i> </a>
+                    </div>
+                    <div class="settings-links">
+                    	<i class="fa-solid fa-right-from-bracket  settings-icon"></i>
+                    	<a target="_blank" onclick="confirm()" href="https://www.facebook.com/login/?privacy_mutation_token=eyJ0eXBlIjowLCJjcmVhdGlvbl90aW1lIjoxNjY2MDI3NzU3LCJjYWxsc2l0ZV9pZCI6MjY5NTQ4NDUzMDcyMDk1MX0%3D">Log Out  <i class="fa-solid fa-chevron-right"></i> </a>
+                    </div>
+
+
+            	</div>
+
+            </div>
+
+        </nav>
+        <div class="container">
+            <!-- ----------------left side bar content---------------------------- -->
+            <div class="left-sidebar">
+                <div class="imp-links">
+                    <a href="#">
+                        <i class="fa-solid fa-file-lines">
+                        </i>
+                        Latest News
+                    </a>
+                    <a href="#">
+                        <i class="fa-solid fa-user-group">
+                        </i>
+                        Friends
+                    </a>
+                    <a href="#">
+                        <i class="fa-solid fa-users">
+                        </i>
+                        Groups
+                    </a>
+                    <a href="#">
+                        <i class="fa-solid fa-cart-shopping">
+                        </i>
+                        MarketPlace
+                    </a>
+                    <a href="#">
+                        <i class="fa-solid fa-clapperboard">
+                        </i>
+                        Watch
+                    </a>
+        <div  id="moreLinks">
+                    	<a href="#">
+                        <i class="fa-solid fa-key">
+                        </i>
+                        Login and password
+                    </a>
+                    <a href="#">
+                        <i class="fa-solid fa-tv">
+                        </i>
+                        Names on FakeBook
+                    </a>
+                    <a href="#">
+                        <i class="fa-solid fa-bell">
+                        </i>
+                        Notification
+                    </a>
+                    <a href="#">
+                        <i class="fa-solid fa-tablet">
+                        </i>
+                        ad preferences
+                    </a>
+                    <a href="#">
+                        <i class="fa-solid fa-info-circle">
+                        </i>
+                        Accessing and Downloading your information
+                    </a>
+                    <a href="#">
+                        <i class="fa-solid fa-circle-xmark">
+                        </i>
+                        Deactivating and Deleting your account
+                    </a>
+        </div>
+                    <a href="#" id="seeMore">
+                        See More
+                    </a>
+
+                    <a href="#" id="seeLess"></a>
+                </div>
+                <div class="shortcut-links">
+                    <p>
+                        Your Shortcuts
+                    </p>
+                    <a href="#">
+                        <img alt="" src="https://images.techopedia.com/images/uploads/web-developer.jpg?w=800&h=0&mode=max&quality=70&scale=both">
+                            Web Developers
+                        </img>
+                    </a>
+                    <a href="#">
+                        <img alt="" src="https://www.interviewbit.com/blog/wp-content/uploads/2021/08/web-developer-skills.jpg">
+                            Web Design courses
+                        </img>
+                    </a>
+                    <a href="#">
+                        <img alt="" src="https://www.clariontech.com/hubfs/Web%20Developer%20Vs%20Web%20Designer.png">
+                            Full Stack Developers
+                        </img>
+                    </a>
+                    <a href="#">
+                        <img alt="" src="https://realwealthbusiness.com/wp-content/uploads/2022/06/developing-programmer-development-website-design-coding-technologies_18497-1019-1.webp">
+                            Website Experts
+                        </img>
+                    </a>
+                </div>
+            </div>
+<!-- ----- -----------main  content---------------------------- -->
+            <div class="main-content">
+            	
+                <div class="story-gallery">
+                    <div class="story story1">
+                        <a href="">
+                            <img alt="" src="https://cdn1.vectorstock.com/i/1000x1000/65/10/facebook-social-network-icon-add-followers-vector-13926510.jpg"/>
+                        </a>
+                        <p>
+                            Post Story
+                        </p>
+                    </div>
+                    <div class="story story2">
+                        <a href="">
+                            <img alt="" src="https://unavatar.now.sh/github/1stevengrant"/>
+                        </a>
+                        <p>
+                            Harlay Davil
+                        </p>
+                    </div>
+                    <div class="story story3">
+                        <a href="">
+                            <img alt="" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/55758/random-user-31.jpg"/>
+                        </a>
+                        <p>
+                            Caustorm soru
+                        </p>
+                    </div>
+                    <div class="story story4">
+                        <a href="">
+                            <img alt="" src="https://pickaface.net/gallery/avatar/66961165_171026_2019_co0p.png"/>
+                        </a>
+                        <p>
+                            Peater jomke
+                        </p>
+                    </div>
+                    <div class="story story5">
+                        <a href="">
+                            <img alt="" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fA%3D%3D&w=1000&q=80"/>
+                        </a>
+                        <p>
+                            Dimeny Uboum
+                        </p>
+                    </div>
+                </div>
+                <div class="write-post-container">
+                    <div class="user-profile">
+                        <img alt="" src="https://pbs.twimg.com/profile_images/606196213369720832/lSvWN_q-_400x400.jpg">
+                            <div>
+                                <p>
+                                    Sachin Sharma
+                                </p>
+                                <small>
+                                    <select>
+                                        <option>
+                                            Public
+                                        </option>
+                                        <option>
+                                            Private
+                                        </option>
+                                    </select>
+                                </small>
+                            </div>
+                        </img>
+                    </div>
+                    <div class="post-input-container">
+                        <textarea placeholder="Write somthing whatever you want.." rows="3">
+                        </textarea>
+                        <div class="add-post-links">
+                            <a href="">
+                                <i class="fa-solid fa-video live">
+                                </i>
+                                Live Video
+                            </a>
+                            <a href="">
+                                <i class="fa-solid fa-camera photo">
+                                </i>
+                                Photo/Video
+                            </a>
+                            <a href="">
+                                <i class="fa-regular fa-face-smile smile">
+                                </i>
+                                Feeling/Activity
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="post-container">
+                    <div class="post-row">
+                        <div class="user-profile">
+                            <img alt="" src="https://pbs.twimg.com/profile_images/606196213369720832/lSvWN_q-_400x400.jpg">
+                                <div>
+                                    <p>
+                                        Sachin Sharma
+                                    </p>
+                                    <span>
+                                        Oct 12 2022, 10:23 PM
+                                    </span>
+                                </div>
+                            </img>
+                        </div>
+                        <a href="">
+                            <i class="fa-solid fa-ellipsis-v">
+                            </i>
+                        </a>
+                    </div>
+                    <p class="post-text">
+                        Subscribe
+                        <span>
+                            @SachinSharma
+                        </span>
+                        on the Youtube to improve your skills. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            		tempor.
+                        <a href="">
+                            #siidsharma
+                        </a>
+                        <a href="https//www.facebook.com">
+                            #Instagram-vibes
+                        </a>
+                    </p>
+                    <img alt="" class="post-img" src="https://img.maximummedia.ie/joe_co_uk/eyJkYXRhIjoie1widXJsXCI6XCJodHRwOlxcXC9cXFwvbWVkaWEtam9lY291ay5tYXhpbXVtbWVkaWEuaWUuczMuYW1hem9uYXdzLmNvbVxcXC93cC1jb250ZW50XFxcL3VwbG9hZHNcXFwvMjAyMlxcXC8wOFxcXC8yNDA5MzYzNlxcXC9pU3RvY2stMTM1MDQ1MDg3Ni5qcGdcIixcIndpZHRoXCI6NzQwLFwiaGVpZ2h0XCI6NDE2LFwiZGVmYXVsdFwiOlwiaHR0cHM6XFxcL1xcXC93d3cuam9lLmNvLnVrXFxcL2Fzc2V0c1xcXC9pbWFnZXNcXFwvam9lY291a1xcXC9uby1pbWFnZS5wbmc_aWQ9MGE4OTc2MWQwYTNjNmY1MWY3ZDZcIixcIm9wdGlvbnNcIjpbXX0iLCJoYXNoIjoiZGIwYWJiNWNiZjY5MzZhZWM3ZDU5ZWJkODZhZjE1ZWY4OTgzNDVhYyJ9/istock-1350450876.jpg">
+                        <div class="post-row">
+                            <div class="activity-icons">
+                                <div>
+                                    <i class="fa fa-thumbs-up like">
+                                    </i>
+                                    12k
+                                </div>
+                                <div>
+                                    <i class="fa fa-comment">
+                                    </i>
+                                    1k
+                                </div>
+                                <div>
+                                    <i class="fa fa-share">
+                                    </i>
+                                    90
+                                </div>
+                            </div>
+                            <div class="post-profile-icon">
+                                <img alt="" src="https://pbs.twimg.com/profile_images/606196213369720832/lSvWN_q-_400x400.jpg">
+                                    <i class="fas fa-caret-down">
+                                    </i>
+                                </img>
+                            </div>
+                        </div>
+                    </img>
+                </div>
+                <div class="post-container">
+                    <div class="post-row">
+                        <div class="user-profile">
+                            <img alt="" src="https://pbs.twimg.com/profile_images/606196213369720832/lSvWN_q-_400x400.jpg">
+                                <div>
+                                    <p>
+                                        Sachin Sharma
+                                    </p>
+                                    <span>
+                                        Oct 12 2022, 10:23 PM
+                                    </span>
+                                </div>
+                            </img>
+                        </div>
+                        <a href="">
+                            <i class="fa-solid fa-ellipsis-v">
+                            </i>
+                        </a>
+                    </div>
+                    <p class="post-text">
+                        Subscribe
+                        <span>
+                            @SachinSharma
+                        </span>
+                        on the Youtube to improve your skills. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            		tempor.
+                        <a href="">
+                            #siidsharma
+                        </a>
+                        <a href="https//www.facebook.com">
+                            #Instagram-vibes
+                        </a>
+                    </p>
+                    <img alt="" class="post-img" src="https://pics.me.me/thumb_when-random-people-post-happy-birthday-on-your-facebook-page-7710345.png">
+                        <div class="post-row">
+                            <div class="activity-icons">
+                                <div>
+                                    <i class="fa fa-thumbs-up like">
+                                    </i>
+                                    12k
+                                </div>
+                                <div>
+                                    <i class="fa fa-comment">
+                                    </i>
+                                    1k
+                                </div>
+                                <div>
+                                    <i class="fa fa-share">
+                                    </i>
+                                    90
+                                </div>
+                            </div>
+                            <div class="post-profile-icon">
+                                <img alt="" src="https://pbs.twimg.com/profile_images/606196213369720832/lSvWN_q-_400x400.jpg">
+                                    <i class="fas fa-caret-down">
+                                    </i>
+                                </img>
+                            </div>
+                        </div>
+                    </img>
+                </div>
+                <div class="post-container">
+                    <div class="post-row">
+                        <div class="user-profile">
+                            <img alt="" src="https://pbs.twimg.com/profile_images/606196213369720832/lSvWN_q-_400x400.jpg">
+                                <div>
+                                    <p>
+                                        Sachin Sharma
+                                    </p>
+                                    <span>
+                                        Oct 12 2022, 10:23 PM
+                                    </span>
+                                </div>
+                            </img>
+                        </div>
+                        <a href="">
+                            <i class="fa-solid fa-ellipsis-v">
+                            </i>
+                        </a>
+                    </div>
+                    <p class="post-text">
+                        Subscribe
+                        <span>
+                            @SachinSharma
+                        </span>
+                        on the Youtube to improve your skills. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            		tempor.
+                        <a href="">
+                            #siidsharma
+                        </a>
+                        <a href="https//www.facebook.com">
+                            #Instagram-vibes
+                        </a>
+                    </p>
+                    <img alt="" class="post-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGhFKcmGgKbeVoDglUeqOhc3cTJawSyTKaQY1moGazMGOFJEYzvw-o7Dbm7mb9MCubUCM&usqp=CAU">
+                        <div class="post-row">
+                            <div class="activity-icons">
+                                <div>
+                                    <i class="fa fa-thumbs-up like">
+                                    </i>
+                                    12k
+                                </div>
+                                <div>
+                                    <i class="fa fa-comment">
+                                    </i>
+                                    1k
+                                </div>
+                                <div>
+                                    <i class="fa fa-share">
+                                    </i>
+                                    90
+                                </div>
+                            </div>
+                            <div class="post-profile-icon">
+                                <img alt="" src="https://pbs.twimg.com/profile_images/606196213369720832/lSvWN_q-_400x400.jpg">
+                                    <i class="fas fa-caret-down">
+                                    </i>
+                                </img>
+                            </div>
+                        </div>
+                    </img>
+                </div>
+                <div class="post-container">
+                    <div class="post-row">
+                        <div class="user-profile">
+                            <img alt="" src="https://pbs.twimg.com/profile_images/606196213369720832/lSvWN_q-_400x400.jpg">
+                                <div>
+                                    <p>
+                                        Sachin Sharma
+                                    </p>
+                                    <span>
+                                        Oct 12 2022, 10:23 PM
+                                    </span>
+                                </div>
+                            </img>
+                        </div>
+                        <a href="">
+                            <i class="fa-solid fa-ellipsis-v">
+                            </i>
+                        </a>
+                    </div>
+                    <p class="post-text">
+                        Subscribe
+                        <span>
+                            @SachinSharma
+                        </span>
+                        on the Youtube to improve your skills. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            		tempor.
+                        <a href="">
+                            #siidsharma
+                        </a>
+                        <a href="https//www.facebook.com">
+                            #Instagram-vibes
+                        </a>
+                    </p>
+                    <img alt="" class="post-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJaw5gQYD51aHzypjYZLGbgcUe6nvZt4F81nl2S0GI-CIpZINVezD6f76CK3rGdS6lzac&usqp=CAU">
+                        <div class="post-row">
+                            <div class="activity-icons">
+                                <div>
+                                    <i class="fa fa-thumbs-up like">
+                                    </i>
+                                    12k
+                                </div>
+                                <div>
+                                    <i class="fa fa-comment">
+                                    </i>
+                                    1k
+                                </div>
+                                <div>
+                                    <i class="fa fa-share">
+                                    </i>
+                                    90
+                                </div>
+                            </div>
+                            <div class="post-profile-icon">
+                                <img alt="" src="https://pbs.twimg.com/profile_images/606196213369720832/lSvWN_q-_400x400.jpg">
+                                    <i class="fas fa-caret-down">
+                                    </i>
+                                </img>
+                            </div>
+                        </div>
+                    </img>
+                </div>
+                <div class="post-container">
+                    <div class="post-row">
+                        <div class="user-profile">
+                            <img alt="" src="https://pbs.twimg.com/profile_images/606196213369720832/lSvWN_q-_400x400.jpg">
+                                <div>
+                                    <p>
+                                        Sachin Sharma
+                                    </p>
+                                    <span>
+                                        Oct 12 2022, 10:23 PM
+                                    </span>
+                                </div>
+                            </img>
+                        </div>
+                        <a href="">
+                            <i class="fa-solid fa-ellipsis-v">
+                            </i>
+                        </a>
+                    </div>
+                    <p class="post-text">
+                        Subscribe
+                        <span>
+                            @SachinSharma
+                        </span>
+                        on the Youtube to improve your skills. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            		tempor.
+                        <a href="">
+                            #siidsharma
+                        </a>
+                        <a href="https//www.facebook.com">
+                            #Instagram-vibes
+                        </a>
+                    </p>
+                    <img alt="" class="post-img" src="https://cdn.someecards.com/someecards/usercards/1331881677803_1426724.png">
+                        <div class="post-row">
+                            <div class="activity-icons">
+                                <div>
+                                    <i class="fa fa-thumbs-up like">
+                                    </i>
+                                    12k
+                                </div>
+                                <div>
+                                    <i class="fa fa-comment">
+                                    </i>
+                                    1k
+                                </div>
+                                <div>
+                                    <i class="fa fa-share">
+                                    </i>
+                                    90
+                                </div>
+                            </div>
+                            <div class="post-profile-icon">
+                                <img alt="" src="https://pbs.twimg.com/profile_images/606196213369720832/lSvWN_q-_400x400.jpg">
+                                    <i class="fas fa-caret-down">
+                                    </i>
+                                </img>
+                            </div>
+                        </div>
+                    </img>
+                </div>
+                <button class="load-more-btn" id="load-more-btn" type="button">
+                   Click to Load More..
+                </button>
+                <div id="load-more">
+                    <div class="post-container">
+                        <div class="post-row">
+                            <div class="user-profile">
+                                <img alt="" src="https://pbs.twimg.com/profile_images/606196213369720832/lSvWN_q-_400x400.jpg">
+                                    <div>
+                                        <p>
+                                            Sachin Sharma
+                                        </p>
+                                        <span>
+                                            Oct 12 2022, 10:23 PM
+                                        </span>
+                                    </div>
+                                </img>
+                            </div>
+                            <a href="">
+                                <i class="fa-solid fa-ellipsis-v">
+                                </i>
+                            </a>
+                        </div>
+                        <p class="post-text">
+                            Subscribe
+                            <span>
+                                @SachinSharma
+                            </span>
+                            on the Youtube to improve your skills. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            		tempor.
+                            <a href="">
+                                #siidsharma
+                            </a>
+                            <a href="https//www.facebook.com">
+                                #Instagram-vibes
+                            </a>
+                        </p>
+                        <img alt="" class="post-img" src="https://pics.me.me/thumb_when-its-your-birthday-but-you-dont-have-friends-to-47620528.png">
+                            <div class="post-row">
+                                <div class="activity-icons">
+                                    <div>
+                                        <i class="fa fa-thumbs-up like">
+                                        </i>
+                                        12k
+                                    </div>
+                                    <div>
+                                        <i class="fa fa-comment">
+                                        </i>
+                                        1k
+                                    </div>
+                                    <div>
+                                        <i class="fa fa-share">
+                                        </i>
+                                        90
+                                    </div>
+                                </div>
+                                <div class="post-profile-icon">
+                                    <img alt="" src="https://pbs.twimg.com/profile_images/606196213369720832/lSvWN_q-_400x400.jpg">
+                                        <i class="fas fa-caret-down">
+                                        </i>
+                                    </img>
+                                </div>
+                            </div>
+                        </img>
+                    </div>
+                    <div class="post-container">
+                        <div class="post-row">
+                            <div class="user-profile">
+                                <img alt="" src="https://pbs.twimg.com/profile_images/606196213369720832/lSvWN_q-_400x400.jpg">
+                                    <div>
+                                        <p>
+                                            Sachin Sharma
+                                        </p>
+                                        <span>
+                                            Oct 12 2022, 10:23 PM
+                                        </span>
+                                    </div>
+                                </img>
+                            </div>
+                            <a href="">
+                                <i class="fa-solid fa-ellipsis-v">
+                                </i>
+                            </a>
+                        </div>
+                        <p class="post-text">
+                            Subscribe
+                            <span>
+                                @SachinSharma
+                            </span>
+                            on the Youtube to improve your skills. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            		tempor.
+                            <a href="">
+                                #siidsharma
+                            </a>
+                            <a href="https//www.facebook.com">
+                                #Instagram-vibes
+                            </a>
+                        </p>
+                        <img alt="" class="post-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvAoaAKSWDlCvMvo_77c4WoRS7YiZYKsf3yQ&usqp=CAU">
+                            <div class="post-row">
+                                <div class="activity-icons">
+                                    <div>
+                                        <i class="fa fa-thumbs-up like">
+                                        </i>
+                                        12k
+                                    </div>
+                                    <div>
+                                        <i class="fa fa-comment">
+                                        </i>
+                                        1k
+                                    </div>
+                                    <div>
+                                        <i class="fa fa-share">
+                                        </i>
+                                        90
+                                    </div>
+                                </div>
+                                <div class="post-profile-icon">
+                                    <img alt="" src="https://pbs.twimg.com/profile_images/606196213369720832/lSvWN_q-_400x400.jpg">
+                                        <i class="fas fa-caret-down">
+                                        </i>
+                                    </img>
+                                </div>
+                            </div>
+                        </img>
+                    </div>
+                    <div class="post-container">
+                        <div class="post-row">
+                            <div class="user-profile">
+                                <img alt="" src="https://pbs.twimg.com/profile_images/606196213369720832/lSvWN_q-_400x400.jpg">
+                                    <div>
+                                        <p>
+                                            Sachin Sharma
+                                        </p>
+                                        <span>
+                                            Oct 12 2022, 10:23 PM
+                                        </span>
+                                    </div>
+                                </img>
+                            </div>
+                            <a href="">
+                                <i class="fa-solid fa-ellipsis-v">
+                                </i>
+                            </a>
+                        </div>
+                        <p class="post-text">
+                            Subscribe
+                            <span>
+                                @SachinSharma
+                            </span>
+                            on the Youtube to improve your skills. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            		tempor.
+                            <a href="">
+                                #siidsharma
+                            </a>
+                            <a href="https//www.facebook.com">
+                                #Instagram-vibes
+                            </a>
+                        </p>
+                        <img alt="" class="post-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk5r1wc-WF04lFv-jP8uk-BpfMXvB55jh2BA&usqp=CAU">
+                            <div class="post-row">
+                                <div class="activity-icons">
+                                    <div>
+                                        <i class="fa fa-thumbs-up like">
+                                        </i>
+                                        12k
+                                    </div>
+                                    <div>
+                                        <i class="fa fa-comment">
+                                        </i>
+                                        1k
+                                    </div>
+                                    <div>
+                                        <i class="fa fa-share">
+                                        </i>
+                                        90
+                                    </div>
+                                </div>
+                                <div class="post-profile-icon">
+                                    <img alt="" src="https://pbs.twimg.com/profile_images/606196213369720832/lSvWN_q-_400x400.jpg">
+                                        <i class="fas fa-caret-down">
+                                        </i>
+                                    </img>
+                                </div>
+                            </div>
+                        </img>
+                    </div>
+                    <div class="post-container">
+                        <div class="post-row">
+                            <div class="user-profile">
+                                <img alt="" src="https://pbs.twimg.com/profile_images/606196213369720832/lSvWN_q-_400x400.jpg">
+                                    <div>
+                                        <p>
+                                            Sachin Sharma
+                                        </p>
+                                        <span>
+                                            Oct 12 2022, 10:23 PM
+                                        </span>
+                                    </div>
+                                </img>
+                            </div>
+                            <a href="">
+                                <i class="fa-solid fa-ellipsis-v">
+                                </i>
+                            </a>
+                        </div>
+                        <p class="post-text">
+                            Subscribe
+                            <span>
+                                @SachinSharma
+                            </span>
+                            on the Youtube to improve your skills. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            		tempor.
+                            <a href="">
+                                #siidsharma
+                            </a>
+                            <a href="https//www.facebook.com">
+                                #Instagram-vibes
+                            </a>
+                        </p>
+                        <img alt="" class="post-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw-m0xGKcj4Nm0-LGxtFW4sj4P3vqjxEY-IA&usqp=CAU">
+                            <div class="post-row">
+                                <div class="activity-icons">
+                                    <div>
+                                        <i class="fa fa-thumbs-up like">
+                                        </i>
+                                        12k
+                                    </div>
+                                    <div>
+                                        <i class="fa fa-comment">
+                                        </i>
+                                        1k
+                                    </div>
+                                    <div>
+                                        <i class="fa fa-share">
+                                        </i>
+                                        90
+                                    </div>
+                                </div>
+                                <div class="post-profile-icon">
+                                    <img alt="" src="https://pbs.twimg.com/profile_images/606196213369720832/lSvWN_q-_400x400.jpg">
+                                        <i class="fas fa-caret-down">
+                                        </i>
+                                    </img>
+                                </div>
+                            </div>
+                        </img>
+                    </div>
+                    <div class="post-container">
+                        <div class="post-row">
+                            <div class="user-profile">
+                                <img alt="" src="https://pbs.twimg.com/profile_images/606196213369720832/lSvWN_q-_400x400.jpg">
+                                    <div>
+                                        <p>
+                                            Sachin Sharma
+                                        </p>
+                                        <span>
+                                            Oct 12 2022, 10:23 PM
+                                        </span>
+                                    </div>
+                                </img>
+                            </div>
+                            <a href="">
+                                <i class="fa-solid fa-ellipsis-v">
+                                </i>
+                            </a>
+                        </div>
+                        <p class="post-text">
+                            Subscribe
+                            <span>
+                                @SachinSharma
+                            </span>
+                            on the Youtube to improve your skills. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            		tempor.
+                            <a href="">
+                                #siidsharma
+                            </a>
+                            <a href="https//www.facebook.com">
+                                #Instagram-vibes
+                            </a>
+                        </p>
+                        <img alt="" class="post-img" src="https://cdn.someecards.com/someecards/usercards/1331881677803_1426724.png">
+                            <div class="post-row">
+                                <div class="activity-icons">
+                                    <div>
+                                        <i class="fa fa-thumbs-up like">
+                                        </i>
+                                        12k
+                                    </div>
+                                    <div>
+                                        <i class="fa fa-comment">
+                                        </i>
+                                        1k
+                                    </div>
+                                    <div>
+                                        <i class="fa fa-share">
+                                        </i>
+                                        90
+                                    </div>
+                                </div>
+                                <div class="post-profile-icon">
+                                    <img alt="" src="https://marketplace.canva.com/EAE_3C_whMk/1/0/566w/canva-fashion-%28poster%29-yxPNdjjeUBU.jpg">
+                                        <i class="fas fa-caret-down">
+                                        </i>
+                                    </img>
+                                </div>
+                            </div>
+                        </img>
+                    </div>
+                </div>
+            </div>
+            <!-- right side bar----- -->
+            <div class="right-sidebar">
+                <!-- ----------------right side bar content---------------------------- -->
+                <div class="sidebar-title">
+                    <h4>
+                        Events
+                    </h4>
+                    <a href="#">
+                        See All
+                    </a>
+                </div>
+                <div class="event">
+                    <div class="left-event">
+                        <h3>
+                            18
+                        </h3>
+                        <span>
+                            March
+                        </span>
+                    </div>
+                    <div class="right-event">
+                        <h4>
+                            Social Media
+                        </h4>
+                        <p>
+                            <i class="fas fa-map-marker">
+                            </i>
+                            Willson tech parks
+                        </p>
+                        <a href="#">
+                            More Info
+                        </a>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="left-event">
+                        <h3>
+                            09
+                        </h3>
+                        <span>
+                            November
+                        </span>
+                    </div>
+                    <div class="right-event">
+                        <h4>
+                            Social Media
+                        </h4>
+                        <p>
+                            <i class="fas fa-map-marker">
+                            </i>
+                            Nobita pitter combser
+                        </p>
+                        <a href="#">
+                            More Info
+                        </a>
+                    </div>
+                </div>
+                <div class="sidebar-title">
+                    <h4>
+                        Advertisement
+                    </h4>
+                    <a href="#">
+                        Close
+                    </a>
+                </div>
+                <a href="">
+                    <img alt="" class="sidebar-ads" src="https://codecanyon.img.customer.envatousercontent.com/files/388585760/ads-pro-preview.png?auto=compress%2Cformat&q=80&fit=crop&crop=top&max-h=8000&max-w=590&s=783a48532dc382cc9a019869819e6276">
+                    </img>
+                </a>
+                <div class="sidebar-title">
+                    <h4 id="showChat">
+                        Chat
+                    </h4>
+                    <a href="#" id="hideChatBtn">
+                        Hide Chat
+                    </a>
+                </div>
+                <!-- ----------------online user list hide and show system------------ -->
+                <div id="hideChat">
+                    <div class="online-list">
+                        <div class="online">
+                            <img alt="" src="https://pbs.twimg.com/profile_images/1565985672501927936/d-r-h241_400x400.jpg">
+                            </img>
+                        </div>
+                        <p>
+                            Aabas modi
+                        </p>
+                    </div>
+                    <hr>
+                        <div class="online-list">
+                            <div class="online">
+                                <img alt="" src="https://pbs.twimg.com/profile_images/1565985672501927936/d-r-h241_400x400.jpg">
+                                </img>
+                            </div>
+                            <p>
+                                Aabas modi
+                            </p>
+                        </div>
+                        <hr>
+                            <div class="online-list">
+                                <div class="online">
+                                    <img alt="" src="https://pbs.twimg.com/profile_images/1565985672501927936/d-r-h241_400x400.jpg">
+                                    </img>
+                                </div>
+                                <p>
+                                    Aabas modi
+                                </p>
+                            </div>
+                            <hr>
+                                <div class="online-list">
+                                    <div class="online">
+                                        <img alt="" src="https://pbs.twimg.com/profile_images/1565985672501927936/d-r-h241_400x400.jpg">
+                                        </img>
+                                    </div>
+                                    <p>
+                                        Aabas modi
+                                    </p>
+                                </div>
+                                <hr>
+                                </hr>
+                            </hr>
+                        </hr>
+                    </hr>
+                </div>
+            </div>
+        </div>
+        <script crossorigin="anonymous" src="https://kit.fontawesome.com/341487813c.js">
+        </script>
+        <script>
+        	var settingsMenu=document.querySelector(".settings-menu");
+        	var darkBtn=document.getElementById('dark-btn');
+ 
+        	var messanger=document.querySelector('.inbox');
+
+        	var notification=document.querySelector('.notification');
+
+        	function notificationToggle() {
+        		// body...
+        		notification.classList.toggle("notification-height");
+        	}
+        	function inboxToggle(){
+        		messanger.classList.toggle("inbox-height");
+        	}
+
+        	function settingsMenuToggle() {
+        		// body...
+        		settingsMenu.classList.toggle("settings-menu-height")
+
+        	}
+        	darkBtn.onclick=function () {
+        		// body...
+        		darkBtn.classList.toggle('dark-btn-on');
+        		document.body.classList.toggle("dark-theme");
+        	}
+        	let seeMore=document.getElementById('seeMore');
+        	let moreLinks=document.getElementById('moreLinks');
+        	let seeLess=document.getElementById('seeLess');
+        	moreLinks.style.display='none';
+        	seeMore.addEventListener('click',()=>{
+
+        	moreLinks.style.display='block';
+        	seeMore.style.display='none';
+        	seeLess.innerHTML='See Less';
+        	
+        	});
+
+        	seeLess.addEventListener('click',()=>{
+        		// seeLess.style.display='none';
+        		moreLinks.style.display='none';
+        		seeMore.style.display='block';
+        	})
+
+
+
+            // hide advertisement-----------=--------------------------------------------
+	let hideChat=document.getElementById('hideChat');
+	let showChat=document.getElementById('showChat');
+	showChat.style.cursor='pointer';
+	showChat.addEventListener('click',()=>{
+	hideChat.style.display='block';
+
+	})
+
+
+	let loadMore=document.getElementById('load-more');
+	let loadbtn=document.getElementById('load-more-btn');
+
+	loadbtn.addEventListener('click',()=>{
+		loadMore.style.display='block';
+		loadbtn.style.display='none';
+	})
+
+
+
+
+
+
+
+
+	// hide chat -------------------------------------------.,,,,,,,,,,,,,,,,,,,,,,
+	let hideChatBtn=document.getElementById('hideChatBtn');
+	
+	hideChatBtn.addEventListener('click',(e)=>{
+		e.preventDefault();
+		hideChat.style.display='none';
+
+	});
+	let like=document.querySelectorAll(".like");
+	for (let i = 0; i < like.length; i++) {
+		like[i].addEventListener('click',()=>{
+		like[i].style.color='blue';
+	})
+  	
+	}
+
+
+
+	function confirm() {
+		// body...
+		alert("You are Logging Out your account")
+	}
+
+
+
+
+
+        </script>
+    </body>
+</html>
